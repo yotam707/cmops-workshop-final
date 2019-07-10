@@ -1,45 +1,31 @@
-import React from 'react'
+// eslint-disable-next-line
+import React ,{ useEffect, useState } from 'react'
 
-export default class FetchRepositories extends React.Component {
-  state = {
-    data: null,
-    loading: false,
-    error: null,
-  }
+const FetchRepositories = (props) => {
+  const { username } = props
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
-  componentDidMount() {
-    this.fetch()
-  }
-
-  componentDidUpdate(prev) {
-    if (prev.username !== this.props.username) this.fetch()
-  }
-
-  fetch = () => {
-    this.setState({
-      loading: true,
-    })
+  useEffect(() => {
+    setLoading(true)
     fetch(
-      `https://api.github.com/users/${this.props.username}/repos?sort=pushed&access_token={PRIVATE_ACCESS_TOKEN}`,
+      `https://api.github.com/users/${username}/repos?sort=pushed&access_token=31676c62d4e04723f09b604df5d4f15339ebc910`,
     )
       .then(res => res.json())
       .then(repositories => {
-        this.setState({
-          data: repositories,
-          loading: false,
-          error: null,
-        })
+        setLoading(false)
+        setData(repositories)
+        setError(null)
       })
       .catch(err => {
-        this.setState({
-          data: null,
-          loading: false,
-          error: err.message,
-        })
+        setLoading(false)
+        setData(null)
+        setError(err.message)
       })
-  }
+  }, [username])
 
-  render() {
-    return this.props.children(this.state)
-  }
+  return (props.children({data, error, loading}));
 }
+
+export default FetchRepositories
