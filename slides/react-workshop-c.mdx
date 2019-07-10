@@ -1,0 +1,48 @@
+import { Head, Notes } from "mdx-deck";
+import defaultTheme from "mdx-deck/themes";
+import Provider from "./CustomProvider";
+export { components } from "mdx-deck-code-surfer";
+
+export const theme = {
+  ...defaultTheme,
+  Provider,
+  code: {
+    ...defaultTheme.code,
+    color: "#000",
+    backgroundColor: "rgba(27,31,35,.05)",
+    borderRadius: "3px",
+    padding: "0 .4em",
+    fontSize: "85%",
+  }
+};
+
+# Welcome to the third (and last 🤪) part of our Workshop!
+
+---
+
+## Let's get started!
+
+---
+
+## Now, that you are a super React developer 🤩
+
+let's transform some components that we know and love
+from spacestation
+
+---
+
+## Here is a list of selected components:
+
+| Component Name                      | Description                        |
+| ----------------------------------- | ---------------------------------- |
+| RowCardSection.jsx                  | Write the set interval as hooks    |
+| TodaysVisitors.jsx                  | Change to hooks welkioGuestUpdater |
+| VisitorCard.jsx                     | Change the load user data          |
+| TodaysVisitorsLink.jsx              | Re-write the clear interval        |
+| MemberNotificationsTemplatesTab.jsx | :)                                 |
+| Search/index.jsx                    | welkioGuestUpdater + state         |
+| ZendeskTicketList.jsx               | :)                                 |
+
+---
+
+## And we are done (Yay)

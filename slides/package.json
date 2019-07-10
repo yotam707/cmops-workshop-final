@@ -1,0 +1,22 @@
+{
+  "name": "cmops-workshop-slides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yotam Bloom <yotam.bloom@wework.com>",
+  "license": "MIT",
+  "scripts": {
+    "deck": "mdx-deck"
+  },
+  "devDependencies": {
+    "mdx-deck": "1.x"
+  },
+  "dependencies": {
+    "@gumgum/react-script-tag": "^0.0.3",
+    "@mdx-js/mdx": "latest",
+    "@mdx-js/tag": "latest",
+    "mdx-deck-code-surfer": "^0.5.5",
+    "react-feather": "^1.1.6",
+    "react-tweet-embed": "^1.2.2",
+    "styled-components": "^4.2.0"
+  }
+}
